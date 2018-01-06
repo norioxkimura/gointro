@@ -123,7 +123,7 @@ world`
  - `\\` . . . `\`, &nbsp;&nbsp; `\'` . . . `'`, &nbsp;&nbsp; `\"` . . . `"`
  - `"\'"`, `'\"'` はエラーです。正しくは `"'"`, `'"'` です。
 
-<details><ul><li>`\a` . . . U+0007 BEL, &nbsp;&nbsp; `\b` . . . U+0008 BS, &nbsp;&nbsp; `\f` . . . U+000C FF, &nbsp;&nbsp; `\v` . . . U+000B VT
+<details><ul><li><code>\a</code> . . . U+0007 BEL, &nbsp;&nbsp; <code>\b</code> . . . U+0008 BS, &nbsp;&nbsp; <code>\f</code> . . . U+000C FF, &nbsp;&nbsp; <code>\v</code> . . . U+000B VT
 </ul></details>
 
 ## 数値リテラル
@@ -159,7 +159,7 @@ bool
 
 <details><ul><li>型名もリテラル（予約語）ではなく暗黙に事前宣言された識別子です。
 <li>サイズ別の符号付き・符号無し整数、浮動小数点数、複素数が用意されています[<sup>→3</sup>](#3)。
-<li>識別子（型名）による以外に型リテラルを用いて複合型が記述できます。`[3]int`, `struct{ x, y int }`, `*int`, `func(int) string`, `interface{ M(string) bool }`, `[]int`, `map[string]int`
+<li>識別子（型名）による以外に型リテラルを用いて複合型が記述できます。<code>[3]int</code>, <code>struct{ x, y int }</code>, <code>*int</code>, <code>func(int) string</code>, <code>interface{ M(string) bool }</code>, <code>[]int</code>, <code>map[string]int</code>
 </ul></details>
 
 ## 変数
@@ -194,7 +194,7 @@ var ok = true // var ok bool = true
  - 型が省略された変数を初期化すると、変数は右辺の型として宣言されます。
 
 <details><ul><li>型を持たない定数による初期化の場合、右辺の型は定数の種類ごとの既定の型となります（→「[定数の型の既定値]( #定数の型の既定値 )」）。
-<li>右辺が `nil` の場合はエラーになります。
+<li>右辺が <code>nil</code> の場合はエラーになります。
 </ul></details>
 
 ## 変数の初期化（短縮形式）
@@ -206,7 +206,7 @@ ok := true // var ok = true
  - `:=` を用いると型が省略された初期化をさらに短い形式で書くことができます。
  - この形式は関数の内側にしか書けません。トップレベルに書くことはできません。
 
-<details><ul><li>`var x, y, z = a, b, c` は同じブロックに既に `var x`, `var y`, `var z` のうち１つでも存在しているとエラーになりますが、`x, y, z := a, b, c` では同じブロックに既に `var x`, `var y`, `var z` の全部が存在している場合のみエラーになります。全部が存在しているのではない場合、存在しているものについては代入が行われ、存在しない変数だけが宣言され初期化されます。
+<details><ul><li><code>var x, y, z = a, b, c</code> は同じブロックに既に <code>var x</code>, <code>var y</code>, <code>var z</code> のうち１つでも存在しているとエラーになりますが、<code>x, y, z := a, b, c</code> では同じブロックに既に <code>var x</code>, <code>var y</code>, <code>var z</code> の全部が存在している場合のみエラーになります。全部が存在しているのではない場合、存在しているものについては代入が行われ、存在しない変数だけが宣言され初期化されます。
 </ul></details>
 
 ## ゼロ値
@@ -222,7 +222,7 @@ fmt.Println(n) // → false
  - 整数型は `0`、文字列型は `""`、論理値型は `false` がゼロ値です。
 
 <details><ul><li>その他の型のゼロ値は[<sup>→4</sup>](#4)を参照してください。
-<li>初期化時に右辺の項目数が足りない場合はゼロ値で初期化はされず、エラーになります。`var s, t, u = "hello", "world" // エラー`
+<li>初期化時に右辺の項目数が足りない場合はゼロ値で初期化はされず、エラーになります。<code>var s, t, u = "hello", "world" // エラー</code>
 </ul></details>
 
 ## 代入
@@ -308,7 +308,7 @@ n + b // エラー
  - 演算子のオペランドは型が厳密に一致している必要があります。
  - 一方のオペランドが型を持たない定数の場合はもう一方のオペランドの型に変換されます。
 
-<details><ul><li>シフト演算子 `<<`, `>>` についてはオペランドの暗黙の型変換が起こることがあります。
+<details><ul><li>シフト演算子 <code><<</code>, <code>>></code> についてはオペランドの暗黙の型変換が起こることがあります。
 <li>定数間の演算については別に定めがあります。
 </ul></details>
 
@@ -353,7 +353,7 @@ func main() {
  - 返り値の型の組は `()` で囲む必要があります。
  - 複数の返り値は複数の変数への代入または初期化で受け取ることができます。
 
-<details><ul><li>１つの値を返す関数宣言で返り値の型を `()` で囲むことは合法です。`func succ(n int) (int) {`
+<details><ul><li>１つの値を返す関数宣言で返り値の型を <code>()</code> で囲むことは合法です。<code>func succ(n int) (int) {</code>
 </ul></details>
 
 ## 関数 (3) 関数内の関数
@@ -497,9 +497,9 @@ n := *p // 実行時エラー
  - `nil` を値に持つポインターに対して `*` 単項演算子を適用すると実行時エラーが発生します。
  - ポインター型の[ゼロ値]( #ゼロ値 )は `nil` です。ポインター型の初期化していない変数は `nil` を値として持ちます。
 
-<details><ul><li>`nil` はポインター型以外の参照的な型の無効値としても用いられます。
-<li>具体的にはスライス型、マップ型、関数型、インターフェース型の変数に `nil` を代入できます。
-<li>`nil` はこれらの型の[ゼロ値]( #ゼロ値 )でもあります。
+<details><ul><li><code>nil</code> はポインター型以外の参照的な型の無効値としても用いられます。
+<li>具体的にはスライス型、マップ型、関数型、インターフェース型の変数に <code>nil</code> を代入できます。
+<li><code>nil</code> はこれらの型の[ゼロ値]( #ゼロ値 )でもあります。
 </ul></details>
 
 ## ポインター (5) ローカル変数へのポインター
