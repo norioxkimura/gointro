@@ -14,7 +14,7 @@ $ go run hello.go
  - `go run` を用いてコンパイルして実行できます。
  - コンパイル結果は実行後自動的に削除されるので何もゴミは残りません。
 
-<details><ul><li>実用プログラムを開発する場合には、環境変数 `GOPATH` の設定が必要です。
+<details><ul><li>実用プログラムを開発する場合には、環境変数 <code>GOPATH</code> の設定が必要です。
 <li>この記事のサンプルの範囲では不要です。
 </ul>
 </details>
@@ -32,11 +32,11 @@ func main() {
  - その次は必ず `import` 宣言です（不要なら省略できます）。
  - 実行プログラムのエントリーポイントは `main` 関数です。
 
-<details><ul><li>`package` 句、`import` 宣言は他の場所（関数の中など）には書けません。
-<li>`import` 宣言の後に書けるのは `const`, `type`, `var` 宣言と `func` 宣言（関数宣言またはメソッド宣言）です。
-<li>このうち `func` 宣言はトップレベルにしか書けません。関数やメソッドはネストできないということです。
+<details><ul><li><code>package</code> 句、<code>import</code> 宣言は他の場所（関数の中など）には書けません。
+<li><code>import</code> 宣言の後に書けるのは <code>const</code>, <code>type</code>, <code>var</code> 宣言と <code>func</code> 宣言（関数宣言またはメソッド宣言）です。
+<li>このうち <code>func</code> 宣言はトップレベルにしか書けません。関数やメソッドはネストできないということです。
 <li>関数宣言内に関数を書きたい場合は関数式を使います。ただし簡単に自身を呼び出すことができません。
-<li>`main` 関数は引数なしで返り値なしでなければなりません。
+<li><code>main</code> 関数は引数なしで返り値なしでなければなりません。
 </ul></details>
 
 ## Go 初心者が戸惑うエラー (1) 改行
@@ -56,7 +56,7 @@ var addr = mail.Address{
  - よって `{` は行頭に来てはならず、前の字句と同じ行になければなりません。
  - また `,` 区切りのリストを改行を交えて書いた場合、最後の要素の行末に `,` を書かなければエラーになります。
 
-<details><ul><li>行末に以下に示すトークンが来た場合、その後ろに `;` が挿入されます: 識別子、数値・文字・文字列リテラル、`break`, `continue`, `fallthrough`, `return`, `++`, `--`, `)`, `]`, `}`
+<details><ul><li>行末に以下に示すトークンが来た場合、その後ろに <code>;</code> が挿入されます: 識別子、数値・文字・文字列リテラル、<code>break</code>, <code>continue</code>, <code>fallthrough</code>, <code>return</code>, <code>++</code>, <code>--</code>, <code>)</code>, <code>]</code>, <code>}</code>
 </ul></details>
 
 ## Go 初心者が戸惑うエラー (2) 未使用の識別子
@@ -73,7 +73,7 @@ func main() {
  - 宣言しただけで使われない識別子が存在するとエラーになります。
  - 仕様はこれをエラーとすることを許容していますが、実際にエラーとするかどうかは処理系の実装依存です。
 
-<details><ul><li>これらのエラーを避けるには (1) ブランク識別子 `_` をうまく使う方法[<sup>→1</sup>](#1)や、(2) goimports ツールを使う方法があります。
+<details><ul><li>これらのエラーを避けるには (1) ブランク識別子 <code>\_</code> をうまく使う方法[<sup>→1</sup>](#1)や、(2) goimports ツールを使う方法があります。
 </ul></details>
 
 ## コメント
