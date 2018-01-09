@@ -29,7 +29,7 @@ func main() {
  - プログラム（ソースファイル）は必ず `package` 句で始まらなければなりません。省略はできません。
  - 実行プログラムの場合 `package main` でなければなりません。
  - その次は必ず `import` 宣言です（不要なら省略できます）。
- - 実行プログラムのエントリーポイントは `func main()`（`main` 関数）です。
+ - 実行プログラムのエントリーポイントは `func main()`（main 関数）です。
 
 <details><ul><li><code>package</code> 句、<code>import</code> 宣言は他の場所（関数の中など）には書けません。
 <li><code>import</code> 宣言の後に書けるのは <code>const</code>, <code>type</code>, <code>var</code> 宣言と <code>func</code> 宣言（関数宣言またはメソッド宣言）です。
