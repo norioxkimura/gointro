@@ -185,22 +185,22 @@ var ok bool = true
 
 ## 変数 (3) 初期化（型の省略）
 ```go
-var s = "hello" // var s string = "hello"
+var s = "hello"       // var s string = "hello"
 var t, u = s, "world" // var t, u string = s, "world"
-var n, p = 1, "one" // var n int = 1; var p string = "one"
-var ok = true // var ok bool = true
+var n, p = 1, "one"   // var n int = 1; var p string = "one"
+var ok = true         // var ok bool = true
 ```
  - 型が省略された変数を初期化すると、変数は右辺の型として宣言されます。
-
+ 
 <details><ul><li>型を持たない定数による初期化の場合、右辺の型は定数の種類ごとの既定の型となります（→「[定数の型の既定値]( #定数の型の既定値 )」）。
 <li>右辺が <code>nil</code> の場合はエラーになります。
 </ul></details>
 
 ## 変数 (4) 初期化（短縮形式）
 ```go
-s := "hello" // var s = "hello"
+s := "hello"       // var s = "hello"
 t, u := s, "world" // var t, u = s, "world"
-ok := true // var ok = true
+ok := true         // var ok = true
 ```
  - `:=` を用いると型が省略された初期化をさらに短い形式で書くことができます。
  - この形式は関数の内側にしか書けません。トップレベルに書くことはできません。
