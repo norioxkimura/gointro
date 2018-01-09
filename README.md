@@ -161,11 +161,10 @@ bool
 <li>識別子（型名）による以外に型リテラルを用いて複合型が記述できます。<code>[3]int</code>, <code>struct{ x, y int }</code>, <code>*int</code>, <code>func(int) string</code>, <code>interface{ M(string) bool }</code>, <code>[]int</code>, <code>map[string]int</code>
 </ul></details>
 
-## 変数
+## 変数 (1) 宣言
 ```go
 var s string
 var m, n int
-var i, j int, t, u string // エラー
 var (
     i, j int
     t, u string
@@ -175,7 +174,7 @@ var (
  - Go では型で修飾するときは後置します。
  - `var ()` という構文も用意されています。
 
-## 変数の初期化
+## 変数 (2) 初期化
 ```go
 var s string = "hello"
 var t, u string = s, "world"
@@ -184,7 +183,7 @@ var ok bool = true
  - `=` を用いて、変数や定数やリテラルで変数を初期化できます。
  - `=` の左右に複数の変数と値を置くことができます。
 
-## 変数の初期化（型の省略）
+## 変数 (3) 初期化（型の省略）
 ```go
 var s = "hello" // var s string = "hello"
 var t, u = s, "world" // var t, u string = s, "world"
@@ -196,7 +195,7 @@ var ok = true // var ok bool = true
 <li>右辺が <code>nil</code> の場合はエラーになります。
 </ul></details>
 
-## 変数の初期化（短縮形式）
+## 変数 (4) 初期化（短縮形式）
 ```go
 s := "hello" // var s = "hello"
 t, u := s, "world" // var t, u = s, "world"
@@ -207,6 +206,16 @@ ok := true // var ok = true
 
 <details><ul><li><code>var x, y, z = a, b, c</code> は同じブロックに既に <code>var x</code>, <code>var y</code>, <code>var z</code> のうち１つでも存在しているとエラーになりますが、<code>x, y, z := a, b, c</code> では同じブロックに既に <code>var x</code>, <code>var y</code>, <code>var z</code> の全部が存在している場合のみエラーになります。全部が存在しているのではない場合、存在しているものについては代入が行われ、存在しない変数だけが宣言され初期化されます。
 </ul></details>
+
+## 変数 (5) エラーになる書き方
+```go
+var n int, s string // エラー
+var i, j int, t, u string // エラー
+var (
+    n int
+    s string
+) = 1, "hello" // エラー
+```
 
 ## ゼロ値
 ```go
