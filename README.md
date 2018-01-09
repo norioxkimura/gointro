@@ -31,7 +31,7 @@ func main() {
  - その次は必ず `import` 宣言です（不要なら省略できます）。
  - 実行プログラムのエントリーポイントは `func main()`（main 関数）です。
 
-<details><ul><li><code>package</code> 句、<code>import</code> 宣言は他の場所（関数の中など）には書けません。
+<details><ul><li><code>package</code> 句、<code>import</code> 宣言はトップレベルにしか書けません。関数の中など、他の場所には書けません。
 <li><code>import</code> 宣言の後に書けるのは <code>const</code>, <code>type</code>, <code>var</code> 宣言と <code>func</code> 宣言（関数宣言またはメソッド宣言）です。
 <li>このうち <code>func</code> 宣言はトップレベルにしか書けません。関数やメソッドはネストできないということです。
 <li>関数宣言内に関数を書きたい場合は関数式を使います。ただし簡単に自身を呼び出すことができません。
