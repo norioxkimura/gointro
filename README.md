@@ -187,6 +187,7 @@ var ok bool = true
 ```go
 var s = "hello" // var s string = "hello"
 var t, u = s, "world" // var t, u string = s, "world"
+var n, p = 1, "one" // var n int = 1; var p string = "one"
 var ok = true // var ok bool = true
 ```
  - 型が省略された変数を初期化すると、変数は右辺の型として宣言されます。
