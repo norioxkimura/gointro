@@ -200,6 +200,7 @@ var ok = true         // var ok bool = true
 ```go
 s := "hello"       // var s = "hello"
 t, u := s, "world" // var t, u = s, "world"
+n, p := 1, "one"   // var n, p = 1, "one"
 ok := true         // var ok = true
 ```
  - `:=` を用いると型が省略された初期化をさらに短い形式で書くことができます。
