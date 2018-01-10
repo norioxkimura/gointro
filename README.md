@@ -255,9 +255,9 @@ n = b // エラー
 
 ## 定数の型の既定値
 ```go
-var n = 1 // var n int = 1
+var n = 1    // var n int = 1
 s := "hello" // var s string = "hello"
-b := true // var b bool = true
+b := true    // var b bool = true
 ```
  - 定数は型を持ちませんが、変数宣言の短縮形など型を持つ値が要求されるケースでは、定数の種類ごとに定められた既定の型に変換されます。
 
