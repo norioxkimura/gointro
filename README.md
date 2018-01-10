@@ -613,8 +613,41 @@ if expr1 {
     // ...
 }
 ```
- - 条件式は起源型が `bool` である必要があります。
+ - 条件式は `bool` である必要があります。
  - `elif`, `elsif`, `elseif` ではなく `else if` です。
+
+<details><ul><li>条件式は厳密には起源型が `bool` であれば OK です。
+</ul></details>
+
+## `for` 文 (1) 無限ループ
+```go
+for {
+    // ...
+    if terminal_condition {
+        break
+    }
+}
+```
+- 無限ループからの脱出は `break` で行います。
+
+## `for` 文 (2) while
+```go
+for a < b {
+    a = a + 16
+}
+```
+
+## `for` 文 (3) 3 項 for
+```go
+for i := 0; i < 10; i++ {
+    // ...
+}
+```
+- `i := 0` は `var i int = 0` の意ですが、`for var i int = 0; i < 10; i++ {` とは書けません。
+
+<details><ul><li>書けるのは式、インクリメント・デクリメント文、代入、変数宣言の短縮形式です。
+</ul></details>
+
 
 
 
