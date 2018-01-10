@@ -263,9 +263,9 @@ b := true // var b bool = true
 
 |定数|既定型|
 |:--|:--|
-|123|`int`|
-|"hello"|`string`|
-|'H'|`rune`|
+|`123`|`int`|
+|`"hello"`|`string`|
+|`'H'`|`rune`|
 |`true`, `false`|`bool`|
 
 ## 定数の宣言
