@@ -615,9 +615,9 @@ if expr1 {
 ```
  - 条件式は `bool` である必要があります。
  - `elif`, `elsif`, `elseif` ではなく `else if` です。
-
-<details><ul><li>条件式は厳密には起源型が `bool` であれば OK です。
-</ul></details>
+ 
+<details><ul><li>条件式は厳密には起源型が `bool` であれば OK です。
+</ul></details>
 
 ## `for` 文 (1) 無限ループ
 ```go
