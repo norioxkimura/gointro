@@ -375,7 +375,7 @@ var succ func(int) int = func(n int) int {
  ```
  - 関数型は関数リテラルから本体部分を取り去った形式で記述します。
 
-## 関数 (5) できないこと
+## 関数 (6) できないこと
 ```go
 func add(a, b int) int {
     return a + b
