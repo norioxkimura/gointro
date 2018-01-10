@@ -341,6 +341,7 @@ func main() {
  - 複数の返り値は複数の変数への代入または初期化で受け取ることができます。
 
 <details><ul><li>１つの値を返す関数宣言で返り値の型を <code>()</code> で囲むことは合法です。<code>func succ(n int) (int) {</code>
+<li>値を返さない関数宣言で返り値の型を <code>()</code> とするのは合法です。<code>func p(n int) () {</code>
 </ul></details>
 
 ## 関数 (3) 関数内の関数
