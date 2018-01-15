@@ -672,7 +672,7 @@ default:
 - case 句は `{}` に囲まれてはいないがブロックである。case 句の内部で宣言された変数のスコープは case 句外には渡らない。
 
 <details><ul><li>`default:` はどの位置にあってもいい。
-</ul><details>
+</ul></details>
  
 ## `switch` 文 (2) `fallthrough`
 ```go
