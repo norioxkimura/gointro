@@ -661,13 +661,14 @@ for i, n := range [...]string{"zero", "one", "two", "three"} {
 switch n {
 case 0:
     /* case 句 */
-case 1:
+case 1, 2:
     /* case 句 */
 default:
     /* case 句 */
 }
 ```
 - `case` 後の式を上から順に評価し、`n` と一致したら `:` 後の case 句を実行し、`switch` 文の実行を終わる。
+- `case` 後の式に複数の式を `,` で区切って書くことができる。
 - どの `case` 後の式も `n` と一致しなかったら `default:` 後の case 句を実行する。
 - case 句は `{}` に囲まれてはいないがブロックである。case 句の内部で宣言された変数のスコープは case 句外には渡らない。
 
