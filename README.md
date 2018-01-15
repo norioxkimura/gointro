@@ -673,6 +673,22 @@ default:
 
 <details><ul><li>`default:` はどの位置にあってもいい。
 </ul><details>
+ 
+## `switch` 文 (2) `fallthrough`
+```go
+switch cmd {
+case "hello world":
+    fmt.Println("hello")
+    fallthrough
+case "world"
+    fmt.Println("world")
+}
+```
+- C 言語とは異なり case 句を実行後、`break` しない限り次の case 句の実行を続けるということはない。
+- ただし最後の文が `fallthrough` の場合、次の case 句の実行を続ける。
+
+
+
 
 
 
