@@ -650,7 +650,7 @@ for i := 0; i < 10; i++ {
 
 ## `for` 文 (4) `range`
 ```go
-for i, n := range [...]{"zero", "one", "two", "three"} {
+for i, n := range [...]string{"zero", "one", "two", "three"} {
     // ...
 }
 ```
