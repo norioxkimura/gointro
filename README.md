@@ -701,6 +701,20 @@ case g():
 - また、switch 値にも任意の型の式を書ける。
 - Go 言語の `switch` 文は、大雑把に言って `if e1 == v`...`else if e2 == v`...`else if e3 == v`...`else`... の糖衣構文と言える。
 
+## `switch` 文 (4) switch 式の省略
+```go
+switch {
+case a < b:
+    // ...
+case a == b:
+    // ...
+case a > b:
+    // ...
+}
+```
+- switch 式を省略すると `true` として扱われ、case 式の値と true が比較されることになります。
+- `if`...`else if`...`else if`...`else`... の糖衣構文ぽくなります。
+
 
 
 
