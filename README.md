@@ -685,8 +685,21 @@ case "world"
     fmt.Println("world")
 }
 ```
-- C 言語とは異なり case 句を実行後、`break` しない限り次の case 句の実行を続けるということはない。
-- ただし最後の文が `fallthrough` の場合、次の case 句の実行を続ける。
+- C や Java の `switch` とは異なり、case 句を実行後に次の case 句が `break` しない限り実行されるということはない。
+- ただし最後の文が `fallthrough` の場合、次の case 句の実行が継続される。
+
+## `switch` 文 (3) 定数でない `case`
+```go
+switch n {
+case f():
+    /* ... */
+case g():
+    /* ... */
+}
+```
+- C や Java の `switch` とは異なり、case 式には定数に限らず任意の式が書ける。
+- また、switch 値にも任意の型の式を書ける。
+- Go 言語の `switch` 文は、大雑把に言って `if e1 == v`...`else if e2 == v`...`else if e3 == v`...`else`... の糖衣構文と言える。
 
 
 
