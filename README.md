@@ -845,7 +845,7 @@ a := [5]int{0, 1, 2, 3, 4}
 s := a[:]
 t := a[1:4]
 fmt.Println(len(s)) // → 5
-fmt.Println(len(s)) // → 3
+fmt.Println(len(t)) // → 3
 ```
 - 配列と同様に組み込み関数 `len()` に渡すと長さを得ることができます。
 
